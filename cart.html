@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="cart.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <script src="js/animations.js" defer></script>
+  <title>Корзина</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <button type="button" class="nav-button" data-link="index.html">Каталог</button>
+      <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+    </div>
+    <div class="header-right">
+      <button type="button" class="nav-button" data-link="search.html">Поиск</button>
+      <button type="button" class="nav-button" data-link="profile.html">Профиль</button>
+      <button type="button" class="nav-button" data-link="cart.html">Корзина</button>
+    </div>
+  </header>
+
+  <main class="page-content cart-page">
+    <section class="cart-panel">
+      <div class="cart-title">Корзина</div>
+      <div class="cart-items">
+        <div class="cart-item">
+          <div class="item-image"></div>
+          <div class="item-details">
+            <div class="item-name">Товар 1</div>
+            <div class="item-price"> 5000 ₽</div>
+            <div class="item-quantity">
+              <button class="quantity-btn">-</button>
+              <span>1</span>
+              <button class="quantity-btn">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" data-action="remove-item">×</button>
+        </div>
+        <div class="cart-item">
+          <div class="item-image"></div>
+          <div class="item-details">
+            <div class="item-name">Товар 2</div>
+            <div class="item-price"> 3000 ₽</div>
+            <div class="item-quantity">
+              <button class="quantity-btn">-</button>
+              <span>1</span>
+              <button class="quantity-btn">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" data-action="remove-item">×</button>
+        </div>
+      </div>
+      <div class="cart-total">
+        <div class="total-label">Итого:</div>
+        <div class="total-amount"> 8000 ₽</div>
+      </div>
+      <button class="checkout-btn" data-action="checkout">Оформить заказ</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+      <h3>Контакты</h3>
+      <button class="footer-button" data-action="open-telegram">Telegram</button>
+      <button class="footer-button" data-action="open-instagram">Instagram</button>
+    </div>
+    <div class="footer-column">
+      <h3>Адреса</h3>
+      <p>Москва</p>
+      <p>Санкт-Петербург</p>
+      <p>Екатеринбург</p>
+    </div>
+    <div class="footer-column">
+      <h3>Помощь</h3>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

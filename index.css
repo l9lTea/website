@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'Kiwi Maru';
+  src: url('fonts/KiwiMaru-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Palace of Sports';
+  src: url('fonts/Palace of Sports.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #C3C3C3;
+  color: #191919;
+  font-family: 'Kiwi Maru', serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+.header {
+  width: 100%;
+  background: #C3C3C3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  border-bottom: 1px solid #737373;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  gap: 24px;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.nav-button {
+  background: transparent;
+  color: #191919;
+}
+
+.page-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 24px 20px 0;
+}
+
+.hero-section,
+.category-card,
+.big-category,
+.profile-panel,
+.collection-card,
+.search-panel,
+.cart-panel {
+  background: #D9D9D9;
+}
+
+.hero-section,
+.category-card,
+.big-category {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section {
+  min-height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image,
+.category-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-section .hero-image { transform: scale(1.00); object-position: center 58%; }
+.categories-grid > .category-card:nth-child(1) category-image { transform: scale(1.03); object-position: center 50%; }
+.categories-grid > .category-card:nth-child(2) .category-image { transform: scale(1.00); object-position: center 52%; }
+.big-category > .category-image { transform: scale(1.00); object-position: center 40%; }
+.hero-button,
+.category-button {
+  padding: 22px 46px;
+  border: 1px solid #191919;
+  border-radius: 28px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  background: rgba(217, 217, 217, 0.85);
+  position: relative;
+  z-index: 1;
+}
+
+.categories-grid {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.category-card {
+  min-height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-category {
+  margin-top: 24px;
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-section {
+  max-width: 760px;
+  margin: 80px auto 0;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.about-section h2 {
+  margin-bottom: 32px;
+  font-family: 'Palace of Sports', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+}
+
+.about-section p {
+  margin: 0 auto;
+  max-width: 640px;
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: 0.15em;
+  color: #191919;
+}
+
+.footer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto 40px;
+  padding: 32px 20px 0;
+  border-top: 1px solid #737373;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column h3,
+.footer-column button,
+.footer-column p {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #191919;
+}
+
+.footer-button {
+  text-align: left;
+  padding: 0;
+}

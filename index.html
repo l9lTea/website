@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <script src="js/animations.js" defer></script>
+  <title>Главная</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <button type="button" class="nav-button" data-link="index.html">Каталог</button>
+      <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+    </div>
+    <div class="header-right">
+  <button type="button" class="nav-button" data-link="search.html">Поиск</button>
+  <button type="button" class="nav-button" data-link="profile.html">Профиль</button>
+  <button type="button" class="nav-button" data-link="cart.html">Корзина</button>
+</div>
+  </header>
+
+  <main class="page-content">
+    <section class="hero-section">
+      <img src="images/land_top.jpg" alt="Верхняя одежда" class="hero-image" />
+      <button class="hero-button" data-link="collection.html">Верхняя одежда</button>
+    </section>
+
+    <section class="categories-grid">
+      <div class="category-card">
+        <img src="images/land_accs.jpg" alt="Аксессуары" class="category-image" />
+        <button type="button" class="category-button" data-link="collection.html">Аксессуары</button>
+      </div>
+      <div class="category-card">
+        <img src="images/land_pants.jpg" alt="Брюки и юбки" class="category-image" />
+        <button type="button" class="category-button" data-link="collection.html">Брюки и юбки</button>
+      </div>
+    </section>
+
+    <section class="big-category">
+      <img src="images/land_shoes.jpg" alt="Обувь" class="category-image" />
+      <button type="button" class="category-button" data-link="collection.html">Обувь</button>
+    </section>
+
+    <section class="about-section">
+      <h2>О нас</h2>
+      <p>
+        FF предлагает не просто одежду — мы создаем атмосферу, где каждый элемент имеет значение.
+        Мода — это форма самовыражения. Мы стремимся создать пространство, где мода и искусство пересекаются.
+        Присоединяйтесь к нам в этом увлекательном путешествии.
+        Исследуйте нашу коллекцию и найдите свой уникальный стиль с FORMA/FUNCTION
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+      <h3>Контакты</h3>
+      <button class="footer-button" data-action="open-telegram">Telegram</button>
+      <button class="footer-button" data-action="open-instagram">Instagram</button>
+    </div>
+    <div class="footer-column">
+      <h3>Адреса</h3>
+      <p>Москва</p>
+      <p>Санкт-Петербург</p>
+      <p>Екатеринбург</p>
+    </div>
+    <div class="footer-column">
+      <h3>Помощь</h3>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

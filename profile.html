@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <script src="js/animations.js" defer></script>
+  <title>Профиль</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <button type="button" class="nav-button" data-link="index.html">Каталог</button>
+      <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+    </div>
+    <div class="header-right">
+      <button type="button" class="nav-button" data-link="search.html">Поиск</button>
+      <button type="button" class="nav-button" data-link="profile.html">Профиль</button>
+      <button type="button" class="nav-button" data-link="cart.html">Корзина</button>
+    </div>
+  </header>
+
+  <main class="page-content profile-page">
+    <section class="profile-panel">
+      <div class="profile-sidebar">
+        <div class="profile-avatar"></div>
+        <button class="profile-menu-button">Заказы</button>
+        <button class="profile-menu-button">Подписки</button>
+        <button class="profile-menu-button">Корзина</button>
+        <button class="profile-menu-button">Выйти</button>
+      </div>
+
+      <div class="profile-form">
+        <div class="profile-form-title">Профиль</div>
+        <div class="profile-field">
+          <label>Телефон</label>
+          <input type="text" placeholder="+7 (___) ___-__-__" />
+        </div>
+        <div class="profile-field">
+          <label>e-mail</label>
+          <input type="email" placeholder="example@mail.ru" />
+        </div>
+        <div class="profile-field">
+          <label>Фамилия</label>
+          <input type="text" placeholder="Иванов" />
+        </div>
+        <div class="profile-field">
+          <label>Имя</label>
+          <input type="text" placeholder="Иван" />
+        </div>
+        <div class="profile-field">
+          <label>Дата рождения</label>
+          <input type="date" />
+        </div>
+        <button class="save-button" data-action="save-profile">Сохранить изменения</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+      <h3>Контакты</h3>
+      <button class="footer-button" data-action="open-telegram">Telegram</button>
+      <button class="footer-button" data-action="open-instagram">Instagram</button>
+    </div>
+    <div class="footer-column">
+      <h3>Адреса</h3>
+      <p>Москва</p>
+      <p>Санкт-Петербург</p>
+      <p>Екатеринбург</p>
+    </div>
+    <div class="footer-column">
+      <h3>Помощь</h3>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

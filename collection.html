@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="collection.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <script src="js/animations.js" defer></script>
+  <title>Коллекция</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <button type="button" class="nav-button" data-link="index.html">Каталог</button>
+      <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+    </div>
+    <div class="header-right">
+      <button type="button" class="nav-button" data-link="search.html">Поиск</button>
+      <button type="button" class="nav-button" data-link="profile.html">Профиль</button>
+      <button type="button" class="nav-button" data-link="cart.html">Корзина</button>
+    </div>
+  </header>
+
+  <main class="page-content collection-page">
+    <section class="collection-section" id="collection-1">
+      <div class="collection-title">Коллекция «14»</div>
+      <div class="collection-row">
+        <div class="collection-card">
+          <img src="images/coll_night.jpg" alt="Коллекция ночь 01" class="collection-image" />
+          <div class="card-label">01</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_night_1.png" alt="Коллекция ночь 02" class="collection-image" />
+          <div class="card-label">02</div>
+        </div>
+        <div class="collection-card large-card">
+          <img src="images/coll_night_bag.png" alt="Коллекция ночь 03" class="collection-image" />
+          <div class="card-label">03</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_night_comb.png" alt="Коллекция ночь 04" class="collection-image" />
+          <div class="card-label">04</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_night_dress.png" alt="Коллекция ночь 05" class="collection-image" />
+          <div class="card-label">05</div>
+        </div>
+        <div class="collection-card large-card">
+          <img src="images/coll_night_dress1.png" alt="Коллекция ночь 06" class="collection-image" />
+          <div class="card-label">06</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_night_pants.jpg" alt="Коллекция ночь 07" class="collection-image" />
+          <div class="card-label">07</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_night_pants1.png" alt="Коллекция ночь 08" class="collection-image" />
+          <div class="card-label">08</div>
+        </div>
+        <div class="collection-card large-card">
+          <img src="images/coll_night_shoes.png" alt="Коллекция ночь 09" class="collection-image" />
+          <div class="card-label">09</div>
+        </div>
+      </div>
+      <button type="button" class="row-arrow left" data-action="prev-row">&lt;</button>
+      <button type="button" class="row-arrow right" data-action="next-row">&gt;</button>
+    </section>
+
+    <section class="collection-section" id="collection-2">
+      <div class="collection-title">Коллекция «НОЧЬ»</div>
+      <div class="collection-row">
+        <div class="collection-card">
+          <img src="images/coll_14.jpg" alt="Коллекция 14 01" class="collection-image" />
+          <div class="card-label">01</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_14_2.jpg" alt="Коллекция 14 02" class="collection-image" />
+          <div class="card-label">02</div>
+        </div>
+        <div class="collection-card large-card">
+          <img src="images/coll_14_jacket.png" alt="Коллекция 14 03" class="collection-image" />
+          <div class="card-label">03</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_14_jacket1.png" alt="Коллекция 14 04" class="collection-image" />
+          <div class="card-label">04</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_14_jacket2.png" alt="Коллекция 14 05" class="collection-image" />
+          <div class="card-label">05</div>
+        </div>
+        <div class="collection-card large-card">
+          <img src="images/coll_14_jacket3.png" alt="Коллекция 14 06" class="collection-image" />
+          <div class="card-label">06</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_14_jacket4.png" alt="Коллекция 14 07" class="collection-image" />
+          <div class="card-label">07</div>
+        </div>
+        <div class="collection-card">
+          <img src="images/coll_14_pants.jpg" alt="Коллекция 14 08" class="collection-image" />
+          <div class="card-label">08</div>
+        </div>
+        <div class="collection-card large-card">
+          <img src="images/coll_14_shoes.jpg" alt="Коллекция 14 09" class="collection-image" />
+          <div class="card-label">09</div>
+        </div>
+      </div>
+      <button type="button" class="row-arrow left" data-action="prev-row">&lt;</button>
+      <button type="button" class="row-arrow right" data-action="next-row">&gt;</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+      <h3>Контакты</h3>
+      <button class="footer-button" data-action="open-telegram">Telegram</button>
+      <button class="footer-button" data-action="open-instagram">Instagram</button>
+    </div>
+    <div class="footer-column">
+      <h3>Адреса</h3>
+      <p>Москва</p>
+      <p>Санкт-Петербург</p>
+      <p>Екатеринбург</p>
+    </div>
+    <div class="footer-column">
+      <h3>Помощь</h3>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
