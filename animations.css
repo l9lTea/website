@@ -1,0 +1,194 @@
+/* ---------- Плавное появление страницы ---------- */
+body { animation: pageIn .6s ease backwards; }
+body.is-leaving { opacity: 0; transition: opacity .3s ease; }
+.header { animation: dropIn .7s cubic-bezier(.2,.7,.2,1) backwards; }
+
+@keyframes pageIn { from { opacity: 0; } }
+@keyframes dropIn { from { opacity: 0; translate: 0 -16px; } }
+@keyframes riseIn { from { opacity: 0; translate: 0 24px; } }
+@keyframes kenburns { from { scale: 1.12; } to { scale: 1; } }
+@keyframes pop { 40% { scale: 1.25; } }
+
+/* ---------- Появление блоков при прокрутке ---------- */
+.js .reveal {
+  opacity: 0;
+  translate: 0 32px;
+  transition: opacity .9s cubic-bezier(.2,.7,.2,1), translate .9s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--d, 0s);
+}
+.js .reveal.is-visible { opacity: 1; translate: 0 0; }
+
+/* ---------- Навигация: подчёркивание ---------- */
+.nav-button { position: relative; padding: 4px 0; }
+.nav-button::after {
+  content: "";
+  position: absolute;
+  left: 0; right: .5em; bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.nav-button:hover::after,
+.nav-button.is-current::after { transform: scaleX(1); }
+
+/* ---------- Главная ---------- */
+.hero-image { animation: kenburns 2.6s cubic-bezier(.2,.7,.2,1) backwards; }
+.hero-image,
+.category-image { transition: scale 1s cubic-bezier(.2,.7,.2,1); }
+.hero-section:hover .hero-image,
+.category-card:hover .category-image,
+.big-category:hover .category-image { scale: 1.06; }
+
+.hero-button,
+.category-button {
+  transition: background .4s ease, color .4s ease, translate .4s ease, box-shadow .4s ease;
+}
+.hero-button:hover,
+.category-button:hover {
+  background: #191919;
+  color: #D9D9D9;
+  translate: 0 -4px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .25);
+}
+.hero-button:active,
+.category-button:active { translate: 0 0; }
+
+.footer-button { transition: translate .3s ease, opacity .3s ease; }
+.footer-button:hover { translate: 6px 0; opacity: .55; }
+
+/* ---------- Образы (коллекции) ---------- */
+.js .collection-section:not(.is-visible) .collection-card { opacity: 0; }
+.js .collection-section.is-visible .collection-card {
+  animation: riseIn .8s cubic-bezier(.2,.7,.2,1) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+.collection-image { transition: scale .9s cubic-bezier(.2,.7,.2,1); }
+.collection-card:hover .collection-image { scale: 1.07; }
+.card-label { transition: translate .4s ease; }
+.collection-card:hover .card-label { translate: 8px 0; }
+
+.row-arrow { transition: transform .25s ease, background .25s ease, box-shadow .25s ease; }
+.row-arrow:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .2);
+}
+.row-arrow:active { transform: translateY(-50%) scale(.95); }
+
+/* ---------- Корзина ---------- */
+.js .cart-item { animation: riseIn .6s cubic-bezier(.2,.7,.2,1) backwards; animation-delay: calc(var(--i, 0) * 120ms + .25s); }
+.cart-item { transition: opacity .35s ease, translate .35s ease, scale .35s ease, box-shadow .3s ease; }
+.cart-item:hover { box-shadow: 0 8px 18px rgba(0, 0, 0, .12); }
+.cart-item.is-removing { opacity: 0; translate: 60px 0; scale: .96; }
+
+.quantity-btn, .remove-btn { transition: background .25s ease, color .25s ease, scale .2s ease, rotate .3s ease; }
+.quantity-btn:hover { background: #191919; color: #fff; }
+.quantity-btn:active { scale: .88; }
+.remove-btn:hover { rotate: 90deg; }
+.item-quantity span, .total-amount { display: inline-block; }
+.pop { animation: pop .35s ease; }
+
+.checkout-btn, .save-button, .search-button {
+  transition: translate .3s ease, box-shadow .3s ease, background .3s ease;
+}
+.checkout-btn:hover, .save-button:hover, .search-button:hover {
+  translate: 0 -3px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .25);
+}
+.checkout-btn:active, .save-button:active, .search-button:active { translate: 0 0; box-shadow: none; }
+
+/* ---------- Поиск и профиль ---------- */
+.search-input, .profile-field input {
+  transition: box-shadow .3s ease, translate .3s ease, background .3s ease;
+}
+.search-input:focus, .profile-field input:focus {
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(25, 25, 25, .15);
+  translate: 0 -2px;
+}
+.js .result-item,
+.js .profile-field,
+.js .profile-menu-button { animation: riseIn .6s cubic-bezier(.2,.7,.2,1) backwards; animation-delay: calc(var(--i, 0) * 100ms + .2s); }
+.result-item, .profile-menu-button { transition: translate .3s ease, box-shadow .3s ease, background .3s ease; }
+.result-item:hover, .profile-menu-button:hover { translate: 8px 0; }
+.result-item:hover { box-shadow: 0 8px 18px rgba(0, 0, 0, .12); }
+.profile-avatar { transition: scale .5s cubic-bezier(.2,.7,.2,1); }
+.profile-avatar:hover { scale: 1.06; }
+
+/* ---------- Если в системе включено «уменьшить движение» ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================
+   Мобильная версия (телефоны и узкие экраны)
+   Главная причина «съезда»: у меню огромный letter-spacing,
+   оно было шире экрана и растягивало всю страницу.
+   ========================================================== */
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+
+  /* Меню: влезает в ширину экрана, при нехватке места переносится */
+  .header { flex-wrap: wrap; justify-content: center; gap: 10px 14px; padding: 14px 12px; }
+  .header-left, .header-right { gap: 14px; font-size: 10px; letter-spacing: .25em; justify-content: center; }
+  .nav-button::after { right: .25em; }
+
+  .page-content { padding: 16px 14px 0; }
+
+  /* Главная */
+  .hero-section { min-height: 420px; }
+  .hero-button, .category-button { padding: 14px 20px; font-size: 11px; letter-spacing: .3em; }
+  .categories-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+  .category-card { min-height: 380px; }
+  .big-category { min-height: 220px; }
+  .about-section { margin-top: 48px; }
+  .about-section p { font-size: 13px; letter-spacing: .08em; }
+
+  .footer { margin: 48px auto 24px; gap: 24px; }
+  .footer-column h3, .footer-column button, .footer-column p { letter-spacing: .25em; }
+
+  /* Образы: вместо стрелок — свайп пальцем */
+  .collection-title { font-size: 18px; letter-spacing: .25em; }
+  .collection-row {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-bottom: 8px;
+    transform: none !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .collection-row::-webkit-scrollbar { display: none; }
+  .collection-card { flex: 0 0 82%; min-height: 420px; scroll-snap-align: start; }
+  .collection-card:hover { transform: none; box-shadow: none; }
+  .row-arrow { display: none; }
+
+  /* Корзина, поиск, профиль */
+  .cart-page .cart-panel,
+  .search-page .search-panel { padding: 22px 16px; margin-top: 20px; min-height: 0; }
+  .cart-title, .search-title, .profile-form-title { font-size: 18px; letter-spacing: .25em; margin-bottom: 20px; }
+  .cart-item { padding: 14px; gap: 12px; }
+  .item-image { width: 64px; height: 64px; flex: none; }
+  .item-details { min-width: 0; flex: 1; }
+  .item-price { letter-spacing: .2em; }
+  .checkout-btn { width: 100%; padding: 18px 16px; letter-spacing: .3em; }
+
+  .search-input-wrapper { flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .search-button { padding: 16px; letter-spacing: .3em; }
+
+  .profile-page .profile-panel { grid-template-columns: 1fr; padding: 16px; margin-top: 20px; min-height: 0; gap: 8px; }
+  .profile-sidebar, .profile-form { padding: 14px; }
+  .profile-avatar { width: 120px; height: 120px; }
+  .profile-menu-button { padding: 14px 0; letter-spacing: .3em; }
+  .profile-field label { letter-spacing: .25em; }
+  .save-button { align-self: stretch; padding: 18px 16px; letter-spacing: .3em; }
+
+  /* 16px — чтобы iPhone не приближал страницу при вводе */
+  .search-input, .profile-field input { font-size: 16px; }
+}
