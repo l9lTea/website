@@ -163,9 +163,9 @@ button {
   border: 1px solid #191919;
   border-radius: 16px;
   background: #D9D9D9;
-  display: left;
+  display: flex;
   justify-content: space-between;
-  align-items: left;
+  align-items: flex-start;
 }
 
 .result-title {
@@ -177,4 +177,128 @@ button {
 .result-price {
   font-size: 14px;
   letter-spacing: 0.3em;
+}
+
+/* ---------- поиск: новая разметка ---------- */
+
+.search-page .search-panel {
+  min-height: 0;
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 24px;
+}
+
+.search-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.search-title {
+  font-family: 'Palace of Sports', sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin: 8px 0 0;
+}
+
+.search-hint {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #5A5A5A;
+}
+
+.inline-suggest {
+  font: inherit;
+  letter-spacing: 0.16em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.inline-suggest:hover { opacity: 0.55; }
+
+.search-input-wrapper {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.search-field {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+
+.search-input {
+  width: 100%;
+  padding: 18px 48px 18px 20px;
+  border: 1px solid #191919;
+  border-radius: 16px;
+  background: #D9D9D9;
+  color: #191919;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  transition: background 0.2s ease;
+}
+
+.search-input::placeholder { color: #7A7A7A; letter-spacing: 0.14em; }
+.search-input:focus { outline: none; background: #E3E3E3; }
+.search-input::-webkit-search-cancel-button { display: none; }
+
+.search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border: 1px solid #737373;
+  border-radius: 50%;
+  line-height: 1;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.search-clear.is-visible { opacity: 1; pointer-events: auto; }
+.search-clear:hover { background: #191919; color: #fff; }
+
+.search-button {
+  padding: 18px 34px;
+  border: 1px solid #191919;
+  border-radius: 16px;
+  background: #191919;
+  color: #ffffff;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.search-button:hover { transform: translateY(-2px); opacity: 0.9; }
+
+.search-chips { margin-bottom: 18px; }
+
+.search-count {
+  display: block;
+  margin-bottom: 22px;
+}
+
+.search-results { margin-top: 0; }
+
+@media (max-width: 720px) {
+  .search-hint { display: none; }
+  .search-input { font-size: 12px; letter-spacing: 0.05em; }
+  .search-input::placeholder { letter-spacing: 0.05em; }
+  .search-page .search-panel { padding: 22px 18px; margin-top: 20px; border-radius: 18px; }
+  .search-title { font-size: 22px; }
+  .search-input-wrapper { flex-direction: column; }
+  .search-button { padding: 15px 24px; }
 }

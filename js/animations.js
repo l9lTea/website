@@ -46,7 +46,9 @@
         entry.target.classList.add('is-visible');
         obs.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      // threshold 0: высокие блоки (страница поиска с 16 товарами) иначе никогда
+      // не набирают 12 % видимости на телефоне и остаются невидимыми
+    }, { threshold: 0, rootMargin: '0px 0px -4% 0px' });
     watched.forEach(el => io.observe(el));
   }
 
@@ -64,7 +66,12 @@
     if (e.persisted) document.body.classList.remove('is-leaving');
   });
 
-  // 5. Корзина: плавное удаление товара
+  // Страховка // 
+  const revealAll = () => document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  window.addEventListener('load', () => setTimeout(revealAll, 1200));
+  window.addEventListener('beforeprint', revealAll);
+
+  // 5. Корзина
   document.addEventListener('click', e => {
     const btn = e.target.closest('button[data-action="remove-item"]');
     if (!btn) return;
@@ -78,7 +85,7 @@
     }, 350);
   }, true);
 
-  // 6. Корзина: «пульс» у количества и итоговой суммы при изменении
+  // 6. Корзина
   const pop = el => {
     el.classList.remove('pop');
     void el.offsetWidth; // перезапуск анимации

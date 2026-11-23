@@ -182,7 +182,7 @@ button {
   border-radius: 50%;
   background: transparent;
   font-size: 16px;
-  display: center;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -231,4 +231,115 @@ button {
   letter-spacing: 0.5em;
   text-transform: uppercase;
   font-size: 14px;
+}
+
+/* ---------- корзина: строка товара ---------- */
+
+.cart-page .cart-panel {
+  min-height: 0;
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 24px;
+}
+
+.cart-title {
+  font-family: 'Palace of Sports', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin: 8px 0 30px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 18px;
+  border: 1px solid #191919;
+  border-radius: 18px;
+  background: #D9D9D9;
+}
+
+.item-info { display: flex; align-items: center; gap: 18px; }
+
+.item-image {
+  width: 92px;
+  height: 116px;
+  overflow: hidden;
+  border: 1px solid #191919;
+  border-radius: 12px;
+  background: #C3C3C3;
+  flex: none;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.item-details h4 {
+  margin: 0 0 6px;
+  font-family: 'Palace of Sports', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.item-sub {
+  margin: 0 0 10px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #5A5A5A;
+}
+
+.item-price { font-size: 13px; letter-spacing: 0.26em; }
+
+.item-controls { display: flex; align-items: center; gap: 18px; }
+
+.quantity-controls { display: flex; align-items: center; gap: 12px; }
+
+.quantity-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #191919;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 14px;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.quantity-btn:hover { background: #191919; color: #fff; }
+
+.item-quantity { min-width: 22px; text-align: center; font-size: 13px; letter-spacing: 0.2em; }
+
+.remove-btn {
+  padding: 9px 16px;
+  border: 1px solid #191919;
+  border-radius: 14px;
+  background: transparent;
+  color: #191919;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.remove-btn:hover { background: #191919; color: #fff; }
+
+.cart-total { border-top: 1px solid #737373; border-bottom: 1px solid #737373; }
+
+@media (max-width: 720px) {
+  .cart-page .cart-panel { padding: 22px 18px; margin-top: 20px; border-radius: 18px; }
+  .cart-item { padding: 14px; }
+  .item-image { width: 70px; height: 88px; }
+  .item-controls { width: 100%; justify-content: space-between; }
 }

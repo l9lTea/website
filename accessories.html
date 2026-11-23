@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Аксессуары — FORMA/FUNCTION</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="js/animations.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-row">
+      <div class="header-left">
+        <button type="button" class="nav-button" data-link="index.html">Каталог</button>
+        <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+      </div>
+      <div class="header-right">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" class="lang-opt" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="nav-button" data-link="search.html">Поиск</button>
+        <button type="button" class="nav-button" data-link="profile.html">Профиль</button>
+        <button type="button" class="nav-button" data-link="cart.html">Корзина<span class="cart-count" data-cart-count></span></button>
+      </div>
+    </div>
+    <nav class="tabs-wrap" aria-label="Категории одежды">
+      <div class="tabs">
+        <a class="tab" href="outerwear.html">Верхняя одежда</a>
+        <a class="tab" href="dresses.html">Платья и комплекты</a>
+        <a class="tab" href="pants.html">Брюки и юбки</a>
+        <a class="tab" href="shoes.html">Обувь</a>
+        <a class="tab is-current" href="accessories.html">Аксессуары</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-content" data-category="accessories">
+    <section class="cat-hero">
+      <img src="images/land_accs.jpg" alt="Аксессуары" class="cat-hero-image" />
+      <div class="cat-hero-text">
+        <p class="eyebrow">Коллекции «14» и «НОЧЬ»</p>
+        <h1 class="cat-hero-title">Аксессуары</h1>
+        <p class="cat-hero-note">Сумки и детали, которые собирают образ.</p>
+      </div>
+      <div class="cat-hero-actions">
+        <button type="button" class="ghost-button" data-link="collection.html">Смотреть образы</button>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <div class="toolbar-left">
+        <span class="count-label" data-count></span>
+        <div class="chip-row" data-size-filters></div>
+      </div>
+      <label class="sort-wrap">
+        Сортировка
+        <select class="sort-select" data-sort>
+          <option value="default">по коллекции</option>
+          <option value="new">сначала новые</option>
+          <option value="price-asc">цена ↑</option>
+          <option value="price-desc">цена ↓</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="product-grid" data-product-grid aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+      <h3>Контакты</h3>
+      <a class="footer-button" href="https://t.me/l9ltea" target="_blank" rel="noopener">Telegram</a>
+      <a class="footer-button" href="https://www.instagram.com/l9ltea/" target="_blank" rel="noopener">Instagram</a>
+      <a class="footer-button footer-mail" href="mailto:l9lTea@icloud.com">l9lTea@icloud.com</a>
+    </div>
+    <div class="footer-column">
+      <h3>Адреса</h3>
+      <p>Москва</p>
+      <p>Санкт-Петербург</p>
+      <p>Екатеринбург</p>
+    </div>
+    <div class="footer-column">
+      <h3>Помощь</h3>
+      <button class="footer-button" data-link="search.html">Поиск по каталогу</button>
+      <button class="footer-button" data-link="collection.html">Образы</button>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

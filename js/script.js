@@ -38,11 +38,11 @@ actionButtons.forEach(button => {
     }
 
     if (action === 'open-telegram') {
-      window.open('https://t.me/ann_romik', '_blank');
+      window.open('https://t.me/l9ltea', '_blank');
     }
 
     if (action === 'open-instagram') {
-      window.open('https://www.instagram.com/ann_romik/', '_blank');
+      window.open('https://www.instagram.com/l9ltea/', '_blank');
     }
 
     if (action === 'perform-search') {

@@ -5,20 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="profile.css" />
   <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="shared.css" />
   <script src="js/animations.js" defer></script>
   <title>Профиль</title>
 </head>
 <body>
-  <header class="header">
-    <div class="header-left">
-      <button type="button" class="nav-button" data-link="index.html">Каталог</button>
-      <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+                <header class="header">
+    <div class="header-row">
+      <div class="header-left">
+        <button type="button" class="nav-button" data-link="index.html">Каталог</button>
+        <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+      </div>
+      <div class="header-right">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" class="lang-opt" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="nav-button" data-link="search.html">Поиск</button>
+        <button type="button" class="nav-button is-current" data-link="profile.html">Профиль</button>
+        <button type="button" class="nav-button" data-link="cart.html">Корзина<span class="cart-count" data-cart-count></span></button>
+      </div>
     </div>
-    <div class="header-right">
-      <button type="button" class="nav-button" data-link="search.html">Поиск</button>
-      <button type="button" class="nav-button" data-link="profile.html">Профиль</button>
-      <button type="button" class="nav-button" data-link="cart.html">Корзина</button>
-    </div>
+    <nav class="tabs-wrap" aria-label="Категории одежды">
+      <div class="tabs">
+        <a class="tab" href="outerwear.html">Верхняя одежда</a>
+        <a class="tab" href="dresses.html">Платья и комплекты</a>
+        <a class="tab" href="pants.html">Брюки и юбки</a>
+        <a class="tab" href="shoes.html">Обувь</a>
+        <a class="tab" href="accessories.html">Аксессуары</a>
+      </div>
+    </nav>
   </header>
 
   <main class="page-content profile-page">
@@ -58,11 +74,12 @@
     </section>
   </main>
 
-  <footer class="footer">
+              <footer class="footer">
     <div class="footer-column">
       <h3>Контакты</h3>
-      <button class="footer-button" data-action="open-telegram">Telegram</button>
-      <button class="footer-button" data-action="open-instagram">Instagram</button>
+      <a class="footer-button" href="https://t.me/l9ltea" target="_blank" rel="noopener">Telegram</a>
+      <a class="footer-button" href="https://www.instagram.com/l9ltea/" target="_blank" rel="noopener">Instagram</a>
+      <a class="footer-button footer-mail" href="mailto:l9lTea@icloud.com">l9lTea@icloud.com</a>
     </div>
     <div class="footer-column">
       <h3>Адреса</h3>
@@ -72,9 +89,14 @@
     </div>
     <div class="footer-column">
       <h3>Помощь</h3>
+      <button class="footer-button" data-link="search.html">Поиск по каталогу</button>
+      <button class="footer-button" data-link="collection.html">Образы</button>
     </div>
   </footer>
-
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

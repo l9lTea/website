@@ -3,55 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Поиск — FORMA/FUNCTION</title>
   <link rel="stylesheet" href="search.css" />
   <link rel="stylesheet" href="animations.css" />
+  <link rel="stylesheet" href="shared.css" />
   <script src="js/animations.js" defer></script>
-  <title>Поиск</title>
 </head>
 <body>
   <header class="header">
-    <div class="header-left">
-      <button type="button" class="nav-button" data-link="index.html">Каталог</button>
-      <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+    <div class="header-row">
+      <div class="header-left">
+        <button type="button" class="nav-button" data-link="index.html">Каталог</button>
+        <button type="button" class="nav-button" data-link="collection.html">Образы</button>
+      </div>
+      <div class="header-right">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-opt" data-lang="ru" aria-pressed="true">RU</button>
+          <button type="button" class="lang-opt" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="nav-button is-current" data-link="search.html">Поиск</button>
+        <button type="button" class="nav-button" data-link="profile.html">Профиль</button>
+        <button type="button" class="nav-button" data-link="cart.html">Корзина<span class="cart-count" data-cart-count></span></button>
+      </div>
     </div>
-    <div class="header-right">
-      <button type="button" class="nav-button" data-link="search.html">Поиск</button>
-      <button type="button" class="nav-button" data-link="profile.html">Профиль</button>
-      <button type="button" class="nav-button" data-link="cart.html">Корзина</button>
-    </div>
+    <nav class="tabs-wrap" aria-label="Категории одежды">
+      <div class="tabs">
+        <a class="tab" href="outerwear.html">Верхняя одежда</a>
+        <a class="tab" href="dresses.html">Платья и комплекты</a>
+        <a class="tab" href="pants.html">Брюки и юбки</a>
+        <a class="tab" href="shoes.html">Обувь</a>
+        <a class="tab" href="accessories.html">Аксессуары</a>
+      </div>
+    </nav>
   </header>
 
-  <main class="page-content search-page">
+  <main class="page-content search-page" data-search-page>
     <section class="search-panel">
-      <div class="search-title">Поиск</div>
+      <div class="search-head">
+        <div>
+          <p class="eyebrow">Каталог</p>
+          <h1 class="search-title">Поиск</h1>
+        </div>
+        <p class="search-hint" data-search-hint>
+          Начните вводить: <button type="button" class="inline-suggest" data-suggest="кожа">кожа</button>,
+          <button type="button" class="inline-suggest" data-suggest="брюки">брюки</button>,
+          <button type="button" class="inline-suggest" data-suggest="сумка">сумка</button>,
+          <button type="button" class="inline-suggest" data-suggest="сапоги">сапоги</button>
+        </p>
+      </div>
+
       <div class="search-input-wrapper">
-        <input type="text" class="search-input" placeholder="Введите запрос..." />
+        <div class="search-field">
+          <input type="search" class="search-input" data-search-input placeholder="Название, категория, материал" aria-label="Поиск по каталогу" autocomplete="off" />
+          <button type="button" class="search-clear" data-search-clear aria-label="Очистить поиск">×</button>
+        </div>
         <button class="search-button" data-action="perform-search">Найти</button>
       </div>
-      <div class="search-results">
-        <div class="result-item">
-          <div class="result-image"></div>
-          <div class="result-info">
-            <div class="result-title">Результат 1</div>
-            <div class="result-description">Описание товара</div>
-          </div>
-        </div>
-        <div class="result-item">
-          <div class="result-image"></div>
-          <div class="result-info">
-            <div class="result-title">Результат 2</div>
-            <div class="result-description">Описание товара</div>
-          </div>
-        </div>
-      </div>
+
+      <div class="search-chips chip-row" data-search-chips></div>
+      <div class="search-count count-label" data-search-count></div>
+
+      <div class="product-grid search-results" data-search-grid aria-live="polite"></div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-column">
       <h3>Контакты</h3>
-      <button class="footer-button" data-action="open-telegram">Telegram</button>
-      <button class="footer-button" data-action="open-instagram">Instagram</button>
+      <a class="footer-button" href="https://t.me/l9ltea" target="_blank" rel="noopener">Telegram</a>
+      <a class="footer-button" href="https://www.instagram.com/l9ltea/" target="_blank" rel="noopener">Instagram</a>
+      <a class="footer-button footer-mail" href="mailto:l9lTea@icloud.com">l9lTea@icloud.com</a>
     </div>
     <div class="footer-column">
       <h3>Адреса</h3>
@@ -61,9 +82,16 @@
     </div>
     <div class="footer-column">
       <h3>Помощь</h3>
+      <button class="footer-button" data-link="search.html">Поиск по каталогу</button>
+      <button class="footer-button" data-link="collection.html">Образы</button>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/search.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
